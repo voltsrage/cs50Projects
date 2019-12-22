@@ -9,7 +9,7 @@ void encryptStr(string message,string key);
 bool checkArgAmt(int argAmt);
 bool checkArgLen(string argStr);
 bool checkForAlpha(string input);
-int checkRepeats(string argStr);
+int checkForRepeats(string argStr);
 
 int main(int argc,string argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc,string argv[])
     {
         if (checkArgLen(argv[1]))
         {
-            if (checkForAlpha(argv[1]) && checkRepeats(argv[1]) == 26)
+            if (checkForAlpha(argv[1]) && checkForRepeats(argv[1]) == 26)
             {
                 string message = get_string("plaintext: ");
 
@@ -86,7 +86,7 @@ bool checkForAlpha(string input)
 }
 
 // Checks for repeated characters
-int checkRepeats(string argStr)
+int checkForRepeats(string argStr)
 {
     int cntAlp = 0; // Keeps track of total characters, if > 26, something was repeated
     int cntInst = 0; // Keeps track of the instances of each character
